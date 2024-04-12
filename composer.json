@@ -1,0 +1,16 @@
+{
+    "name": "eggzin/namespace",
+    "autoload": {
+        "psr-4": {
+            "Extends\\": "extends/",
+            "Implements\\": "implements/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Eliel Godoy",
+            "email": "eliel.a.m.godoy@gmail.com"
+        }
+    ],
+    "require": {}
+}
