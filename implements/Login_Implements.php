@@ -1,12 +1,12 @@
 <?php
 
-namespace Extends;
+namespace Implements;
 
 require __DIR__.'/../vendor/autoload.php';
 
-use Extends\UsuarioFactory;
+use Implements\UsuarioFactory;
 
-class Login
+class Login_Implements
 {
     public function executar($lo, $se)
     {
@@ -14,16 +14,20 @@ class Login
         $senha = $se;
 
         $perfil = 'professor';
+
         $usuario = UsuarioFactory::criar($perfil);
 
         if ($usuario->autenticar($login, $senha)) {
             $autorizacoes = $usuario->autorizar();
-            echo "Bem-vindo, $login! Você tem acesso às seguintes funcionalidades: " . implode(', ', $autorizacoes);
+
+            echo "Bem-vindo, $login! Você tem acesso às seguintes funcionalidades: " . implode(', ', $autorizacoes)."\n";+
+
+
+
         } else {
             echo 'Login ou senha incorretos.';
         }
     }
 }
 
-$login = new Login();
-$login->executar('eu', '123');
+
